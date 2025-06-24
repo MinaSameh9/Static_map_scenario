@@ -57,14 +57,13 @@ This document outlines the steps to set up and run a ROS (Robot Operating System
 
 ## Steps to Use the Static Map with TEB Navigation
 
-1. **Launch RTAB-Map in Localization Mode**
+1.**Launch Map Server with the Saved Map**
+   ```bash
+   rosrun map_server map_server ~/catkin_ws/src/maps/my_static_map.yaml
+   ```
+2. **Launch RTAB-Map in Localization Mode**
    ```bash
    roslaunch rtabmap_ros rtabmap.launch localization:=true rtabmapviz:=false rviz:=true frame_id:=base_link
-   ```
-
-2. **Launch Map Server with the Saved Map**
-   ```bash
-   rosrun map_server map_server ~/catkin_ws/src/static_scenario/maps/my_static_map.yaml
    ```
 
 3. **Launch TEB Navigation**
